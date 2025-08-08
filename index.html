@@ -16,17 +16,24 @@
 
   <style>
     body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background:#F7F9FB; color:#051923; }
-    .chart-container {
-      position: relative; width:100%; max-width:700px; margin:0 auto; height:400px; max-height:50vh;
-    }
+    .chart-container { position:relative; width:100%; max-width:700px; margin:0 auto; height:400px; max-height:50vh; }
   </style>
 </head>
 <body class="antialiased">
+  <!-- Brand bar with logo -->
+  <div class="w-full bg-[#003554]">
+    <div class="container mx-auto max-w-4xl px-4 md:px-8 py-6 md:py-10">
+      <img
+        src="./14BF1C7D-D4AA-4637-B2D8-FD2C3051D0D8.png"
+        alt="Moonshot Consulting Logo"
+        class="mx-auto w-full max-w-md"
+        loading="eager"
+      >
+    </div>
+  </div>
+
   <div class="container mx-auto p-4 md:p-8 max-w-4xl">
     <header class="text-center my-8 md:my-16">
-      <img src="./14BF1C7D-D4AA-4637-B2D8-FD2C3051D0D8.png" 
-           alt="Moonshot Consulting Logo" 
-           class="mx-auto mb-6 w-full max-w-md">
       <h1 class="text-4xl md:text-6xl font-black text-[#003554] tracking-tight">
         This Isn’t a Résumé Problem
       </h1>
@@ -57,7 +64,6 @@
             When people are at their lowest — uncertain, anxious, and sometimes ashamed — there's an entire cottage
             industry that pops up with a promise: <span class="font-bold text-[#00A6FB]">We can fix it.</span>
           </p>
-
           <div class="chart-container mt-6">
             <canvas id="promisesChart"></canvas>
           </div>
@@ -144,11 +150,7 @@
             }
           },
           scales: {
-            y: {
-              beginAtZero: true,
-              max: 100,
-              ticks: { callback: (v) => v + '%' }
-            }
+            y: { beginAtZero: true, max: 100, ticks: { callback: (v) => v + '%' } }
           }
         }
       });
